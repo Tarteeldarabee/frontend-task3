@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productivity Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Productivity Hub</h1>
+    <div class="theme-toggle">
+      <label for="theme-switch">Dark Mode:</label>
+      <input type="checkbox" id="theme-switch">
+    </div>
+  </header>
+
+  <main>
+    <!-- Navigation Buttons -->
+    <div class="navigation">
+      <button onclick="showSection('todo')">Go to To-Do</button>
+      <button onclick="showSection('quiz')">Go to Quiz</button>
+    </div>
+
+    <!-- To-Do App -->
+    <section id="todo" class="fade-in">
+      <img src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png" alt="To-Do Icon" class="app-icon">
+      <h2>To-Do List</h2>
+      <input type="text" id="todo-input" placeholder="Add a new task">
+      <button onclick="addTodo()">Add</button>
+      <ul id="todo-list"></ul>
+    </section>
+
+    <!-- Quiz App -->
+    <section id="quiz" class="fade-in" style="display:none">
+      <img src="https://cdn-icons-png.flaticon.com/512/1157/1157000.png" alt="Quiz Icon" class="app-icon">
+      <h2>Quick Knowledge Quiz</h2>
+      <div id="quiz-container">
+        <p id="question"></p>
+        <div id="options" class="quiz-options"></div>
+        <button onclick="nextQuestion()" id="next-btn">Next</button>
+        <p id="score"></p>
+      </div>
+      <div id="quiz-controls" style="display:none">
+        <p id="final-score"></p>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+        <button onclick="showSection('todo')">Back to To-Do</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tarteel Darabee. Built with ❤️ using HTML, CSS & JavaScript.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
